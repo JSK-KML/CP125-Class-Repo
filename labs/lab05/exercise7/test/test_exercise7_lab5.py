@@ -1,9 +1,12 @@
 import pytest
-import sys
+import importlib.util
 import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from exercise7 import find_conflicting_ports
+_exercise_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'exercise7.py')
+_spec = importlib.util.spec_from_file_location("exercise7_lab5", _exercise_path)
+_module = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_module)
+find_conflicting_ports = _module.find_conflicting_ports
 
 
 def test_basic_conflicts():

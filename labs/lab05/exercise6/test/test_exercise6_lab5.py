@@ -1,9 +1,12 @@
 import pytest
-import sys
+import importlib.util
 import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from exercise6 import find_slow_endpoints
+_exercise_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'exercise6.py')
+_spec = importlib.util.spec_from_file_location("exercise6_lab5", _exercise_path)
+_module = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_module)
+find_slow_endpoints = _module.find_slow_endpoints
 
 
 def test_basic_slow_endpoints():
