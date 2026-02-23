@@ -5,7 +5,7 @@
 def number_filtering():
     result = []
     for i in range(5):
-       num = int(input(f"Enter number {i+1}: "))
+       num = int(input(f"Enter number{i+1}: "))
        result.append(num)
        
     print(f"Numbers in ascending order: {sorted(result)}")
