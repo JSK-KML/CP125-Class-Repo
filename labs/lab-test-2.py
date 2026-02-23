@@ -9,7 +9,7 @@ def number_filtering():
        result.append(num)
        
     print(f"Numbers in ascending order: {sorted(result)}")
-    print(f"Sum of all numbers: {sum(result)}")
+    print(f"Summation of all numbers: {sum(result)}")
     print(f"Largest number: {max(result)}")
 
 number_filtering()
