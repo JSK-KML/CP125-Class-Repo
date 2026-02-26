@@ -1,9 +1,11 @@
 
 def clean_sessions(pool, sessions, dead_servers):
-    """
-    Verify dead servers in pool, remove their sessions, and return sorted list.
-    """
-    pass
+    alive_sessions = []
+    dead_set = set(dead_servers)  
+    for server, client in sessions:
+        if server not in dead_set:
+            alive_sessions.append((server, client))
+    return alive_sessions
 
 
 # Test

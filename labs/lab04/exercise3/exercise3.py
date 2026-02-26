@@ -22,7 +22,7 @@ def find_low_stock(quantities, threshold):
     low_items = []
     for i in range(len(quantities)):
         if quantities[i] < threshold:
-            low_items.append(quantities[i])
+            low_items.append(i)
     return low_items
 
 
@@ -31,7 +31,7 @@ def calculate_restock_cost(quantities, prices, threshold, restock_qty):
     total_cost = 0
     for i in range(len(low_indices)):
         index = low_indices[i]
-        total_cost = prices[index] * restock_qty
+        total_cost = total_cost + prices[index] * restock_qty
     return total_cost
 
 

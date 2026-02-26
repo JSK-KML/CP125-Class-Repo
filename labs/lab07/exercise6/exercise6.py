@@ -17,7 +17,7 @@ def get_passing_students(scores, pass_mark):
 
 
 if __name__ == "__main__":
-    existing = {"Ali": 85, "Sara": 70}
+    existing = {"Ali": 85, "Sara ": 70}
     new_results = {"Ali": 90, "Ahmad": 60}
 
     merged = merge_results(existing, new_results)
