@@ -10,24 +10,27 @@ show_math_trend = _module.show_math_trend
 import matplotlib
 matplotlib.use('Agg')
 
+_lab_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+_data_file = os.path.join(_lab_dir, "data", "students.csv")
+
 
 def test_returns_student_count():
-    result = show_math_trend("../data/students.csv")
+    result = show_math_trend(_data_file)
     assert result == 25
 
 
 def test_return_type():
-    result = show_math_trend("../data/students.csv")
+    result = show_math_trend(_data_file)
     assert isinstance(result, int)
 
 
 def test_count_positive():
-    result = show_math_trend("../data/students.csv")
+    result = show_math_trend(_data_file)
     assert result > 0
 
 
 def test_count_matches_data():
-    result = show_math_trend("../data/students.csv")
+    result = show_math_trend(_data_file)
     assert result == 25
 
 
@@ -36,26 +39,26 @@ def test_function_exists():
 
 
 def test_accepts_string_parameter():
-    result = show_math_trend("../data/students.csv")
+    result = show_math_trend(_data_file)
     assert result is not None
 
 
 def test_returns_integer():
-    result = show_math_trend("../data/students.csv")
+    result = show_math_trend(_data_file)
     assert type(result) == int
 
 
 def test_count_not_zero():
-    result = show_math_trend("../data/students.csv")
+    result = show_math_trend(_data_file)
     assert result != 0
 
 
 def test_count_reasonable_range():
-    result = show_math_trend("../data/students.csv")
+    result = show_math_trend(_data_file)
     assert 1 <= result <= 100
 
 
 def test_multiple_calls_consistent():
-    result1 = show_math_trend("../data/students.csv")
-    result2 = show_math_trend("../data/students.csv")
+    result1 = show_math_trend(_data_file)
+    result2 = show_math_trend(_data_file)
     assert result1 == result2
