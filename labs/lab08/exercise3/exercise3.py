@@ -2,6 +2,13 @@
 # Write your code below:
 
 def calculate_order_total(products_file, order_file, output_file):
+    product = open(products_file, "r")
+    order = open(order_file, "r")
+    outfile = open(output_file, "w")
+    total = 0.0
+    product_dict = {}
+
+    
     """
     Calculate total cost for each product in order.
 

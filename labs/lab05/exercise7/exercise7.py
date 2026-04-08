@@ -1,7 +1,16 @@
 
 def find_conflicting_ports(rules):
-    pass
+    port_actions = {}
+    conflicts = []
 
+    for rule_id, port, action in rules:
+        if port in port_actions:
+            if port_actions[port] != action:
+                conflicts.append((port, rule_id))
+        else:
+            port_actions[port] = action
+
+    return sorted(conflicts)
 
 rules = [
     (1, 80, "ALLOW"), 
@@ -23,3 +32,4 @@ rules2 = [
 
 result2 = find_conflicting_ports(rules2)
 print(f"Conflicts: {result2}")
+

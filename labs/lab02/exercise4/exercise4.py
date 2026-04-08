@@ -2,9 +2,16 @@
 # Write your code below:
 
 def get_hourly_rate(vehicle_type, hour_24):
-    # TODO: Implement this function
+    if vehicle_type == "Electric":
+        rate = 2
+    elif vehicle_type == "Hybrid" and (hour_24 > 6 and hour_24 < 22):
+        rate = 5
+    elif vehicle_type == "Hybrid":
+        rate = 2
+    else:
+        rate = 5
     # Return hourly rate based on vehicle and time
-    pass
+    return rate
 
-# Test your code here
-print("Testing Dynamic Parking Rate...")
+result = get_hourly_rate("Electric", 5)
+print(f"Testing Dynamic Parking Rate: {result}")

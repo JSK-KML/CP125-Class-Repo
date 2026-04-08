@@ -1,10 +1,11 @@
 # Lab 08 Sandbox - Follow along with the lab instructions
 
 # Step 1: The Problem - Data doesn't persist
+f = open("labs/lab08/data/scores.txt", "r")
 scores = []
-scores.append(85)
-scores.append(92)
-scores.append(78)
+for line in f:
+    scores.append(int(line.strip()))
+f.close()
 
 print("Scores:", scores)
 
