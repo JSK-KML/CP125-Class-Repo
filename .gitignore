@@ -26,6 +26,8 @@ ENV/
 env/
 venv.bak/
 cp115_env/
+cp125_env/
+.venv/
 
 # Unit test / coverage reports
 htmlcov/
