@@ -1,7 +1,12 @@
 {
     "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
     "python.testing.pytestArgs": [
-        "."
+        ".",
+        "--tb=short",
+        "--no-header",
+        "-q",
+        "--disable-warnings",
+        "--color=yes"
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true
